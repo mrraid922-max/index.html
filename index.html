@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لوحة — استوديو توليد الصور بالذكاء الاصطناعي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b14;--card:#14142200;--surface:#151526;--text:#f1f1f8;--muted:#9a9ab5;--line:#262640;--a:#8b5cf6;--b:#06b6d4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f7fc;--surface:#fff;--text:#14142a;--muted:#5d5d78;--line:#e3e3f0}}
+:root[data-theme="light"]{--bg:#f7f7fc;--surface:#fff;--text:#14142a;--muted:#5d5d78;--line:#e3e3f0}
+:root[data-theme="dark"]{--bg:#0b0b14;--surface:#151526;--text:#f1f1f8;--muted:#9a9ab5;--line:#262640}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Cairo',Tahoma,Arial,sans-serif;line-height:1.7}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-weight:800;font-size:22px;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a{color:var(--muted);text-decoration:none;margin-inline-start:18px;font-size:15px}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:600;color:#fff;background:linear-gradient(90deg,var(--a),var(--b));padding:12px 26px;border-radius:12px;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.hero{text-align:center;padding:56px 0 40px}
+.hero h1{font-size:clamp(30px,6vw,54px);line-height:1.25;margin:0 0 14px;font-weight:800}
+.hero p{color:var(--muted);max-width:620px;margin:0 auto 26px;font-size:18px}
+section{padding:44px 0}
+h2{font-size:28px;margin:0 0 8px;text-align:center}
+.sub{color:var(--muted);text-align:center;margin:0 0 28px}
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px}
+@media(max-width:760px){.studio{grid-template-columns:1fr}}
+label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}
+textarea,select{width:100%;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px}
+textarea{min-height:110px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:99px;cursor:pointer;color:var(--muted);background:transparent;font-family:inherit}
+.row{display:flex;gap:12px}.row>div{flex:1}
+.out{display:flex;align-items:center;justify-content:center;min-height:300px;background:var(--bg);border:1px dashed var(--line);border-radius:16px;overflow:hidden;color:var(--muted);text-align:center;padding:10px}
+.out img,.out svg{width:100%;height:auto;max-height:420px;border-radius:12px}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:16px}
+.gallery img,.gallery svg{width:100%;height:auto;border-radius:10px;cursor:pointer;border:1px solid var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{margin:6px 0 4px}.card p{margin:0;color:var(--muted)}
+.ico{font-size:30px}
+.price{font-size:34px;font-weight:800}.price small{font-size:14px;color:var(--muted);font-weight:400}
+.card ul{padding:0 18px 0 0;margin:12px 0 18px;color:var(--muted)}
+.card.pop{border-color:var(--a);box-shadow:0 0 0 1px var(--a)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:8px 0 0}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
+</style>
+<script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="logo">✦ لوحة</div><div><a href="#studio">الاستوديو</a><a href="#features">المميزات</a><a href="#pricing">الأسعار</a><a href="#faq">أسئلة</a></div></nav>
+
+<header class="hero">
+<h1>حوّل كلماتك إلى <span class="logo">صور مذهلة</span></h1>
+<p>اكتب وصفاً بسيطاً واحصل على صور وملصقات جدارية بجودة احترافية خلال ثوانٍ، بأي أسلوب فني تريده.</p>
+<a class="btn" href="#studio">ابدأ التوليد مجاناً</a> <a class="btn ghost" href="#pricing">شاهد الأسعار</a>
+</header>
+
+<section id="studio">
+<h2>الاستوديو</h2>
+<p class="sub">جرّب الواجهة الآن</p>
+<div class="studio">
+<div>
+<label for="prompt">وصف الصورة</label>
+<textarea id="prompt" placeholder="مثال: غروب على صحراء الجزائر بألوان دافئة"></textarea>
+<div class="chips" id="chips"></div>
+<div class="row">
+<div><label for="style">الأسلوب</label><select id="style"><option value="dream">خيالي</option><option value="neon">نيون</option><option value="water">ألوان مائية</option><option value="poster">ملصق جداري بسيط</option></select></div>
+<div><label for="ratio">المقاس</label><select id="ratio"><option value="1,1">مربع 1:1</option><option value="3,4" selected>ملصق 3:4</option><option value="16,9">عريض 16:9</option></select></div>
+</div>
+<p><button class="btn" id="go" style="width:100%;margin-top:16px">✦ ولّد الصورة</button></p>
+<p class="note">يعمل التوليد عبر خدمة Puter؛ قد يُطلب منك تسجيل الدخول إلى حساب Puter مجاني عند أول استخدام. الوصف بالإنجليزية يعطي نتائج أفضل غالباً.</p>
+</div>
+<div>
+<div class="out" id="out">ستظهر صورتك هنا</div>
+<div class="gallery" id="gal"></div>
+</div>
+</div>
+</section>
+
+<section id="features">
+<h2>لماذا لوحة؟</h2><p class="sub">كل ما تحتاجه في مكان واحد</p>
+<div class="grid3">
+<div class="card"><div class="ico">⚡</div><h3>سرعة فائقة</h3><p>نتائج خلال ثوانٍ معدودة مع إمكانية توليد عدة نسخ.</p></div>
+<div class="card"><div class="ico">🎨</div><h3>أساليب متنوعة</h3><p>خيالي، نيون، ألوان مائية، ملصقات جدارية وغيرها.</p></div>
+<div class="card"><div class="ico">🖼️</div><h3>جودة للطباعة</h3><p>مقاسات جاهزة للملصقات والمنشورات والأغلفة.</p></div>
+<div class="card"><div class="ico">🌍</div><h3>يدعم العربية</h3><p>واجهة عربية كاملة ووصف بلغتك مباشرة.</p></div>
+<div class="card"><div class="ico">🔒</div><h3>خصوصية</h3><p>أعمالك لك وحدك، ويمكنك حذفها متى شئت.</p></div>
+<div class="card"><div class="ico">💼</div><h3>استخدام تجاري</h3><p>رخصة تجارية في الخطط المدفوعة.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>الأسعار</h2><p class="sub">أسعار توضيحية قابلة للتعديل</p>
+<div class="grid3">
+<div class="card"><h3>مجاني</h3><div class="price">0$ <small>/شهر</small></div><ul><li>10 صور شهرياً</li><li>جودة قياسية</li></ul><a class="btn ghost" href="#studio">ابدأ</a></div>
+<div class="card pop"><h3>احترافي</h3><div class="price">9$ <small>/شهر</small></div><ul><li>500 صورة شهرياً</li><li>جودة عالية</li><li>رخصة تجارية</li></ul><a class="btn" href="#studio">اشترك</a></div>
+<div class="card"><h3>فريق</h3><div class="price">29$ <small>/شهر</small></div><ul><li>صور غير محدودة</li><li>5 مقاعد</li><li>دعم أولوية</li></ul><a class="btn ghost" href="#studio">تواصل</a></div>
+</div>
+</section>
+
+<section id="faq">
+<h2>أسئلة شائعة</h2><p class="sub"></p>
+<details><summary>هل أستطيع بيع الصور التي أولّدها؟</summary><p>نعم في الخطط ذات الرخصة التجارية، مع مراجعة شروط خدمة مزوّد النموذج.</p></details>
+<details><summary>ما المقاسات المتاحة؟</summary><p>مربع، ملصق عمودي 3:4، وعريض 16:9.</p></details>
+<details><summary>كيف أحصل على أفضل نتيجة؟</summary><p>صف الموضوع والألوان والإضاءة والأسلوب في جملة واحدة واضحة.</p></details>
+</section>
+</div>
+<footer>© 2026 لوحة — جميع الحقوق محفوظة</footer>
+
+<script>
+(function(){
+var ideas=['قطة رائدة فضاء','مدينة مستقبلية عند الغروب','غابة سحرية متوهجة','جبال الأطلس في الصباح'];
+var chips=document.getElementById('chips'),pr=document.getElementById('prompt'),out=document.getElementById('out'),gal=document.getElementById('gal');
+ideas.forEach(function(t){var b=document.createElement('button');b.className='chip';b.textContent=t;b.onclick=function(){pr.value=t};chips.appendChild(b)});
+var STY={dream:'dreamy fantasy art, soft glowing light, highly detailed',neon:'neon cyberpunk glow, vivid colors, dark background',water:'watercolor painting, soft washes, paper texture',poster:'minimal wall poster design, flat shapes, clean composition, print quality'};
+document.getElementById('go').onclick=async function(){
+var t=pr.value.trim();if(!t){pr.focus();return}
+var btn=this;btn.disabled=true;btn.textContent='جارٍ التوليد…';out.textContent='✦ نرسم لك لوحتك…';
+try{
+if(typeof puter==='undefined')throw new Error('puter');
+var st=document.getElementById('style').value,ra=document.getElementById('ratio').value.split(',');
+var img=await puter.ai.txt2img(t+', '+STY[st],{model:'black-forest-labs/flux.1-schnell'});
+img.style.cssText='width:100%;max-height:460px;object-fit:cover;border-radius:12px;aspect-ratio:'+ra[0]+'/'+ra[1];
+out.innerHTML='';out.appendChild(img);
+var th=img.cloneNode();th.style.cssText='';
+th.onclick=function(){out.innerHTML='';out.appendChild(img.cloneNode())};
+gal.insertBefore(th,gal.firstChild);
+}catch(e){out.textContent='تعذّر التوليد، حاول مرة أخرى.'}
+btn.disabled=false;btn.textContent='✦ ولّد الصورة'};
+})();
+</script>
+</body>
+</html>
